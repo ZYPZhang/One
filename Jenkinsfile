@@ -1,5 +1,10 @@
 pipeline {
     agent any
+        parameters {
+        string(name: 'VERSION', defaultValue: '1.0', description: 'Enter the version number')
+        choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'prod'], description: 'Select the target environment')
+        booleanParam(name: 'CLEAN_BUILD', defaultValue: true, description: 'Perform a clean build')
+    }
     stages {
         stage('Build') {
             steps {
