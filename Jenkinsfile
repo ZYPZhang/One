@@ -31,7 +31,7 @@ pipeline {
         stage('Example') {
             agent {
                 // 指定在具有该工作区的节点上运行
-                node('node-with-workspace') {
+                node('master') {
                     // 在该节点上的工作区中执行步骤
                     workspace {
                         // 在工作区中执行操作，包括使用 hudson.FilePath 方法
